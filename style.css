@@ -681,21 +681,43 @@ button {
     overflow: hidden;
     box-shadow: var(--shadow-sm);
     transition: var(--transition);
+    border: 2px solid transparent;
 }
 
 .personality-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    border-color: var(--primary);
+}
+
+.personality-card:hover .personality-img img {
+    transform: scale(1.05);
 }
 
 .personality-img {
-    height: 200px;
+    height: 280px;
     background: var(--bg-light);
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.personality-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    transition: transform 0.5s ease;
+    display: block;
+}
+
+.personality-img i {
+    /* Icon fallback styling */
     color: var(--text-muted);
     font-size: 5rem;
+    z-index: 1;
 }
 
 .personality-info {
