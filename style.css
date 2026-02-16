@@ -1,0 +1,1071 @@
+/* =========================================
+   VOICE OF DAUDKANDI - ARCHIVE STYLE
+   Inspired by hadiarchive.com
+   ========================================= */
+
+/* =========================================
+   1. CSS VARIABLES & THEME
+   ========================================= */
+:root {
+    /* Primary Colors - More subdued, memorial style */
+    --primary: #006a4e; /* Bangladesh Green */
+    --secondary: #c42738; /* Bangladesh Red */
+    --accent: #f4a300; /* Golden accent */
+    
+    /* Neutral Colors */
+    --bg-white: #ffffff;
+    --bg-light: #f8f9fa;
+    --bg-dark: #1a1a1a;
+    --text-dark: #2d3748;
+    --text-muted: #718096;
+    --text-light: #f7fafc;
+    
+    /* Borders & Shadows */
+    --border-light: #e2e8f0;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
+    --shadow-lg: 0 10px 30px rgba(0,0,0,0.2);
+    
+    /* Typography */
+    --font-main: 'Hind Siliguri', sans-serif;
+    --font-heading: 'Noto Serif Bengali', serif;
+    
+    /* Spacing & Layout */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --transition: all 0.3s ease;
+}
+
+body.dark-mode {
+    --bg-white: #1e293b;
+    --bg-light: #0f172a;
+    --text-dark: #f1f5f9;
+    --text-muted: #cbd5e1;
+    --border-light: #334155;
+}
+
+/* =========================================
+   2. RESET & BASE
+   ========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    background: var(--bg-white);
+    color: var(--text-dark);
+    line-height: 1.7;
+    transition: background 0.3s, color 0.3s;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+    font-family: var(--font-main);
+}
+
+/* Accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    z-index: 100;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* =========================================
+   3. LAYOUT & UTILITIES
+   ========================================= */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.section-light {
+    background: var(--bg-light);
+}
+
+.section-dark {
+    background: var(--bg-dark);
+    color: var(--text-light);
+}
+.section-dark h2,
+.section-dark h3 {
+    color: var(--text-light);
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* Section Headers */
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.section-desc {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.subsection {
+    margin-top: 4rem;
+}
+
+.subsection-title {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* =========================================
+   4. BUTTONS
+   ========================================= */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+    text-align: center;
+    justify-content: center;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: 2px solid var(--primary);
+}
+
+.btn-primary:hover {
+    background: #005a42;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+}
+
+.btn-outline:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.btn-white {
+    background: white;
+    color: var(--primary);
+    border: 2px solid white;
+}
+.btn-white:hover {
+    background: transparent;
+    color: white;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+}
+
+.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   5. NAVBAR
+   ========================================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-light);
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+    padding: 0.75rem 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    width: 60px;
+    height: auto;
+    border-radius: var(--radius-sm);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+.lg-span{
+    color:red;
+}
+.logo-main {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+    color: var(--primary);
+    line-height: 1.2;
+}
+
+.logo-sub {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+}
+
+.nav-links a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-lang {
+    background: var(--bg-light);
+    border: 1px solid var(--border-light);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.btn-lang:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    color: var(--text-dark);
+}
+
+/* =========================================
+   6. HERO SECTION
+   ========================================= */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: url('./images/VoDKcover.png') center/cover no-repeat;
+    text-align: center;
+    color: white;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(0,106,78,0.85), rgba(0,0,0,0.6));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 2rem;
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.3);
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.hero-btns {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* =========================================
+   7. QUOTE SECTION
+   ========================================= */
+.quote-section {
+    padding: 3rem 0;
+    background: linear-gradient(135deg, var(--primary), #005a42);
+}
+
+.quote-card {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
+
+.quote-icon {
+    font-size: 2.5rem;
+    opacity: 0.4;
+    margin-bottom: 1rem;
+}
+
+.quote-text {
+    font-size: 1.5rem;
+    font-style: italic;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    font-family: var(--font-heading);
+}
+
+.quote-author {
+    font-size: 1rem;
+    opacity: 0.9;
+    font-weight: 600;
+}
+
+/* =========================================
+   8. STATS GRID
+   ========================================= */
+.stat-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border-top: 4px solid var(--primary);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.stat-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: var(--text-muted);
+    font-size: 1rem;
+}
+
+/* =========================================
+   9. MEDIA CATEGORIES
+   ========================================= */
+.media-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.media-cat-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border-left: 4px solid var(--primary);
+}
+
+.media-cat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+    border-left-color: var(--secondary);
+}
+
+.media-cat-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.media-cat-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.media-cat-card p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.view-all {
+    color: var(--primary);
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-all:hover {
+    gap: 0.75rem;
+}
+
+/* =========================================
+   10. GALLERY
+   ========================================= */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.gallery-item {
+    position: relative;
+    height: 250px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1);
+}
+
+.gallery-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.gallery-overlay i {
+    color: white;
+    font-size: 2rem;
+}
+
+.gallery-item:hover .gallery-overlay {
+    opacity: 1;
+}
+
+/* =========================================
+   11. TIMELINE
+   ========================================= */
+.timeline-wrapper {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 0;
+}
+
+.timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: var(--primary);
+    transform: translateX(-50%);
+}
+
+.timeline-event {
+    display: flex;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.timeline-event:nth-child(odd) {
+    flex-direction: row;
+}
+
+.timeline-event:nth-child(even) {
+    flex-direction: row-reverse;
+}
+
+.timeline-date {
+    flex: 0 0 120px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-align: center;
+    font-family: var(--font-heading);
+}
+
+.timeline-content {
+    flex: 1;
+    background: rgba(255,255,255,0.05);
+    padding: 1.5rem;
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255,255,255,0.1);
+    margin: 0 2rem;
+    transition: var(--transition);
+}
+
+.timeline-event:nth-child(odd) .timeline-content {
+    margin-left: 2rem;
+}
+
+.timeline-event:nth-child(even) .timeline-content {
+    margin-right: 2rem;
+}
+
+.timeline-content:hover {
+    background: rgba(255,255,255,0.1);
+    transform: translateY(-3px);
+}
+
+.timeline-content h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.timeline-content p {
+    opacity: 0.9;
+}
+
+.timeline-event::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 1rem;
+    width: 16px;
+    height: 16px;
+    background: var(--accent);
+    border: 3px solid var(--bg-dark);
+    border-radius: 50%;
+    transform: translateX(-50%);
+}
+
+/* =========================================
+   12. PERSONALITIES
+   ========================================= */
+.personality-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.personality-card {
+    background: var(--bg-white);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.personality-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.personality-img {
+    height: 200px;
+    background: var(--bg-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 5rem;
+}
+
+.personality-info {
+    padding: 1.5rem;
+}
+
+.personality-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+}
+
+.role {
+    color: var(--secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+}
+
+.bio {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* =========================================
+   13. CONTRIBUTE SECTION
+   ========================================= */
+.contribute-section {
+    background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+}
+
+.contribute-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.contribute-card {
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.contribute-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}
+
+.contribute-icon {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.contribute-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+}
+
+.contribute-card p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+/* =========================================
+   14. TRIBUTE SECTION
+   ========================================= */
+.tribute-section {
+    background: var(--secondary);
+    padding: 4rem 0;
+    color: white;
+}
+
+.tribute-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.tribute-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+}
+
+.tribute-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.tribute-section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* =========================================
+   15. FOOTER
+   ========================================= */
+footer {
+    background: #111;
+    color: #cbd5e1;
+    padding: 3rem 0 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-logo {
+    width: 80px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: var(--radius-sm);
+}
+
+.footer-brand h4 {
+    color: white;
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-links h4,
+.footer-social h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-links ul {
+    list-style: none;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a:hover {
+    color: var(--primary);
+    padding-left: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icons a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding: 1.5rem 0;
+    text-align: center;
+}
+
+/* =========================================
+   16. MODALS & UI ELEMENTS
+   ========================================= */
+/* Lightbox */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.95);
+    z-index: 2000;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: var(--radius-md);
+}
+
+.close-lightbox {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 3rem;
+    color: white;
+    background: none;
+    cursor: pointer;
+}
+
+/* Modal */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 2001;
+    display: none;
+}
+
+.modal-overlay.active {
+    display: block;
+}
+
+.custom-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-white);
+    padding: 2rem;
+    border-radius: var(--radius-md);
+    max-width: 500px;
+    width: 90%;
+    z-index: 2002;
+    display: none;
+    box-shadow: var(--shadow-lg);
+}
+
+.custom-modal.active {
+    display: block;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.5rem;
+    background: none;
+    color: var(--text-muted);
+}
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--secondary);
+    color: white;
+    border-radius: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    z-index: 999;
+}
+
+.back-to-top.show {
+    display: flex;
+}
+
+.back-to-top:hover {
+    transform: translateY(-5px);
+    background: #a01f2e;
+}
+
+/* =========================================
+   17. ANIMATIONS
+   ========================================= */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.revealed {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+/* =========================================
+   18. RESPONSIVE
+   ========================================= */
+@media (max-width: 992px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .timeline-line {
+        left: 20px;
+    }
+    
+    .timeline-event {
+        flex-direction: row !important;
+        padding-left: 60px;
+    }
+    
+    .timeline-event:nth-child(even) {
+        flex-direction: row !important;
+    }
+    
+    .timeline-date {
+        flex: 0 0 80px;
+        text-align: left;
+    }
+    
+    .timeline-content {
+        margin: 0 0 0 1rem !important;
+    }
+    
+    .timeline-event::after {
+        left: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--bg-white);
+        flex-direction: column;
+        padding: 1.5rem;
+        box-shadow: var(--shadow-md);
+        border-top: 1px solid var(--border-light);
+    }
+    
+    .nav-links.show {
+        display: flex;
+    }
+    
+    .hamburger {
+        display: block;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-header h2 {
+        font-size: 2rem;
+    }
+    
+    .quote-text {
+        font-size: 1.2rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
