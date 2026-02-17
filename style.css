@@ -606,92 +606,161 @@ button {
 }
 
 
-/* 11. TIMELINE */
+/* 11. TIMELINE - Updated Design */
+
+#timeline {
+    background: #006A4E;
+    position: relative;
+    overflow: hidden;
+    padding: 4rem 0;
+}
+
+#timeline .section-header h2 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+#timeline .section-desc {
+    color: rgba(255,255,255,0.8);
+}
 
 .timeline-wrapper {
     position: relative;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 2rem 0;
+    max-width: 1000px;
+    margin: 4rem auto 0;
 }
 
+/* Center Line */
 .timeline-line {
     position: absolute;
     left: 50%;
     top: 0;
     bottom: 0;
-    width: 3px;
-    background: var(--primary);
+    width: 2px;
+    background: transparent;
+    border-left: 2px dashed rgba(255,255,255,0.4);
     transform: translateX(-50%);
 }
 
+/* Event Container */
 .timeline-event {
-    display: flex;
-    margin-bottom: 3rem;
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+    width: 100%;
 }
 
-.timeline-event:nth-child(odd) {
-    flex-direction: row;
-}
-
-.timeline-event:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
+/* Timeline Circle (Date) */
 .timeline-date {
-    flex: 0 0 120px;
-    font-size: 1.5rem;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    background: #004d40;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
     font-weight: 700;
-    color: var(--accent);
-    text-align: center;
-    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+/* Timeline Content (Card) */
 .timeline-content {
-    flex: 1;
-    background: rgba(255,255,255,0.05);
-    padding: 1.5rem;
-    border-radius: var(--radius-md);
-    border: 1px solid rgba(255,255,255,0.1);
-    margin: 0 2rem;
-    transition: var(--transition);
-}
-
-.timeline-event:nth-child(odd) .timeline-content {
-    margin-left: 2rem;
-}
-
-.timeline-event:nth-child(even) .timeline-content {
-    margin-right: 2rem;
-}
-
-.timeline-content:hover {
-    background: rgba(255,255,255,0.1);
-    transform: translateY(-3px);
+    position: relative;
+    width: 45%;
+    background: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .timeline-content h3 {
+    color: #006A4E;
     font-size: 1.25rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
-    color: white;
 }
 
 .timeline-content p {
-    opacity: 0.9;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+    opacity: 1;
 }
 
-.timeline-event::after {
+/* Connecting Dotted Line */
+.timeline-content::after {
     content: '';
     position: absolute;
-    left: 50%;
-    top: 1rem;
-    width: 16px;
-    height: 16px;
-    background: var(--accent);
-    border: 3px solid var(--bg-dark);
-    border-radius: 50%;
-    transform: translateX(-50%);
+    top: 50%;
+    width: 55px;
+    height: 2px;
+    border-top: 2px dashed rgba(255,255,255,0.4);
+    transform: translateY(-50%);
+}
+
+/* Layout Alternation */
+.timeline-event:nth-child(odd) .timeline-content {
+    margin-right: auto;
+}
+.timeline-event:nth-child(odd) .timeline-content::after {
+    right: -55px;
+}
+
+.timeline-event:nth-child(even) .timeline-content {
+    margin-left: auto;
+}
+.timeline-event:nth-child(even) .timeline-content::after {
+    left: -55px;
+}
+
+/* Remove old dot */
+.timeline-event::after {
+    display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .timeline-line {
+        left: 30px;
+        border-left: 2px dashed rgba(255,255,255,0.4);
+    }
+    
+    .timeline-event {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 3rem;
+    }
+    
+    .timeline-date {
+        position: absolute;
+        left: 30px;
+        top: 0;
+        transform: translate(-50%, 0);
+        width: 50px;
+        height: 50px;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 70px);
+        margin-left: 70px !important;
+        margin-right: 0 !important;
+    }
+    
+    .timeline-content::after {
+        display: none;
+    }
 }
 
 /* =========================================
@@ -1164,31 +1233,7 @@ footer {
         font-size: 2.5rem;
     }
     
-    .timeline-line {
-        left: 20px;
-    }
-    
-    .timeline-event {
-        flex-direction: row !important;
-        padding-left: 60px;
-    }
-    
-    .timeline-event:nth-child(even) {
-        flex-direction: row !important;
-    }
-    
-    .timeline-date {
-        flex: 0 0 80px;
-        text-align: left;
-    }
-    
-    .timeline-content {
-        margin: 0 0 0 1rem !important;
-    }
-    
-    .timeline-event::after {
-        left: 20px;
-    }
+
 }
 
 @media (max-width: 768px) {
