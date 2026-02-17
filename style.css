@@ -1553,3 +1553,34 @@ body.dark-mode .dropdown-content li a {
 body.dark-mode .dropdown-content li a:hover {
     background-color: var(--bg-light);
 }
+
+/* Mobile Optimizations for Dark Mode Toggle */
+@media (max-width: 768px) {
+    .nav-actions {
+        gap: 0.5rem; /* Reduce gap on mobile */
+    }
+    
+    .controls {
+        gap: 0.5rem; /* Reduce control gap */
+    }
+    
+    .theme-toggle {
+        width: 44px;
+        height: 44px; /* Proper touch size */
+        margin-right: 0; /* Remove extra margin */
+        display: flex !important; /* Force visible */
+        font-size: 1.25rem;
+    }
+    
+    /* Ensure icon is centered */
+    .theme-toggle i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    /* In dark mode, ensure hamburger is visible */
+    body.dark-mode .hamburger {
+        color: #f1f5f9;
+    }
+}
