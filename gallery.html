@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ছবির সংগ্রহশালা · ভয়েস অফ দাউদকান্দি</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+      .page-header {
+          padding: 6rem 0 3rem;
+          background: var(--bg-dark);
+          color: white;
+          text-align: center;
+      }
+      .filter-btn {
+          margin: 0.5rem;
+          border-radius: 50px;
+          text-transform: capitalize;
+      }
+      .filter-btn.active {
+          background-color: var(--primary);
+          color: white;
+          border-color: var(--primary);
+      }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <img src="./images/Logo_VoDK1.jpg" alt="Voice of Daudkandi Logo" class="logo-img">
+            <div class="logo-text">
+                <h2 class="logo-main">Voice of <span class="lg-span">Daudkandi</span></h2>
+                <span class="logo-sub">দাউদকান্দির কণ্ঠ</span>
+            </div>
+        </a>
+        
+        <div class="nav-actions">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">হোম</a></li>
+                <li><a href="index.html#about">পরিচিতি</a></li>
+                <li class="dropdown">
+                    <a href="index.html#media">মিডিয়া</a>
+                    <ul class="dropdown-content">
+                        <li><a href="gallery.html">ছবি</a></li>
+                        <li><a href="index.html#videos">ভিডিও</a></li>
+                        <li><a href="index.html#writings">লেখালেখি</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#timeline">টাইমলাইন</a></li>
+                <li><a href="index.html#personalities">ব্যক্তিত্ব</a></li>
+                <li><a href="index.html#team">টিম</a></li>
+                <li><a href="index.html#contribute">অবদান রাখুন</a></li>
+            </ul>
+
+            <div class="controls">
+                <button id="hamburger" class="hamburger" aria-label="মেনু">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>ছবির সংগ্রহশালা</h1>
+            <p style="opacity: 0.8;">দাউদকান্দির প্রকৃতি, মানুষ ও সংস্কৃতির প্রতিচ্ছবি</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="text-center" style="margin-bottom: 2rem;">
+                <button class="btn btn-outline filter-btn active" onclick="filterGallery('all', this)">সব</button>
+                <button class="btn btn-outline filter-btn" onclick="filterGallery('nature', this)">প্রকৃতি</button>
+                <button class="btn btn-outline filter-btn" onclick="filterGallery('culture', this)">সংস্কৃতি</button>
+                <button class="btn btn-outline filter-btn" onclick="filterGallery('history', this)">ইতিহাস</button>
+                <button class="btn btn-outline filter-btn" onclick="filterGallery('sports', this)">খেলাধুলা</button>
+            </div>
+
+            <div class="gallery-grid" id="fullGallery">
+                <!-- Nature -->
+                <div class="gallery-item" data-category="nature">
+                    <img src="./images/dkimg1.jpg" alt="Nature 1" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="nature">
+                    <img src="./images/dkimg2.jpg" alt="Nature 2" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                
+                <!-- Culture -->
+                <div class="gallery-item" data-category="culture">
+                    <img src="./images/dkimg3.jpg" alt="Culture 1" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="culture">
+                    <img src="./images/dkimg4.jpg" alt="Culture 2" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <!-- History -->
+                <div class="gallery-item" data-category="history">
+                    <img src="./images/dkimg5.jpg" alt="History 1" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="history">
+                    <img src="./images/dkimg6.jpg" alt="History 2" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+
+                <!-- Sports -->
+                <div class="gallery-item" data-category="sports">
+                    <img src="./images/dkimg7.jpg" alt="Sports 1" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="sports">
+                    <img src="./images/dkimg8.jpg" alt="Sports 2" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                
+                <!-- More Examples (Duplicated) -->
+                <div class="gallery-item" data-category="nature">
+                    <img src="./images/dkimg1.jpg" alt="Nature 3" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+                <div class="gallery-item" data-category="culture">
+                    <img src="./images/dkimg3.jpg" alt="Culture 3" loading="lazy">
+                    <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                </div>
+            </div>
+        </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="./images/Logo_VoDK1.jpg" alt="Logo" class="footer-logo">
+                <h4>দাউদকান্দির কণ্ঠ</h4>
+                <p>স্মৃতি সংগ্রহশালা - ২০২৫ সাল থেকে ঐতিহ্য সংরক্ষণ</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>দ্রুত লিংক</h4>
+                <ul>
+                    <li><a href="index.html#about">পরিচিতি</a></li>
+                    <li><a href="gallery.html">ছবি</a></li>
+                    <li><a href="index.html#timeline">টাইমলাইন</a></li>
+                    <li><a href="index.html#personalities">ব্যক্তিত্ব</a></li>
+                    <li><a href="index.html#contribute">অবদান</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>অনুসরণ করুন</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/voiceofdk/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© ২০২৫ দাউদকান্দির কণ্ঠ – সর্বস্বত্ব সংরক্ষিত</p>
+        </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <button class="close-lightbox" id="closeLightbox">&times;</button>
+    <img id="lightboxImg" src="" alt="Gallery Image">
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    // Filter Functionality
+    function filterGallery(category, btn) {
+        // Active Button
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter Items
+        const items = document.querySelectorAll('.gallery-item');
+        items.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+                item.style.display = 'block';
+                // Reset animation
+                item.style.animation = 'none';
+                item.offsetHeight; /* trigger reflow */
+                item.style.animation = 'fadeIn 0.5s';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+  </script>
+</body>
+</html>

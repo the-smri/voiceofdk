@@ -35,7 +35,14 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">হোম</a></li>
                 <li><a href="#about">পরিচিতি</a></li>
-                <li><a href="#media">মিডিয়া</a></li>
+                <li class="dropdown">
+                    <a href="#media">মিডিয়া</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#photos">ছবি</a></li>
+                        <li><a href="#videos">ভিডিও</a></li>
+                        <li><a href="#writings">লেখালেখি</a></li>
+                    </ul>
+                </li>
                 <li><a href="#timeline">টাইমলাইন</a></li>
                 <li><a href="#personalities">ব্যক্তিত্ব</a></li>
                 <li><a href="#team">টিম</a></li>
@@ -151,58 +158,40 @@
             <!-- Photo Gallery Preview -->
             <div id="photos" class="subsection">
                 <h3 class="subsection-title">ছবির সংগ্রহশালা</h3>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
+                <div class="f-gallery">
+                    <div class="f-gallery-item">
                         <img src="./images/dkimg1.jpg" alt="নদী" loading="lazy">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="f-gallery-item">
                         <img src="./images/dkimg2.jpg" alt="স্কুল" loading="lazy">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="f-gallery-item">
                         <img src="./images/dkimg3.jpg" alt="সংস্কৃতি" loading="lazy">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="f-gallery-item">
                         <img src="./images/dkimg4.jpg" alt="ক্রীড়া" loading="lazy">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
-                    <div class="gallery-item">
+                    <div class="f-gallery-item">
                         <img src="./images/dkimg5.jpg" alt="ক্রীড়া" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="./images/dkimg6.jpg" alt="ক্রীড়া" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="./images/dkimg7.jpg" alt="ক্রীড়া" loading="lazy">
-                        <div class="gallery-overlay">
-                            <i class="fas fa-search-plus"></i>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <img src="./images/dkimg8.jpg" alt="ক্রীড়া" loading="lazy">
                         <div class="gallery-overlay">
                             <i class="fas fa-search-plus"></i>
                         </div>
                     </div>
                 </div>
                 <div class="text-center" style="margin-top: 2rem;">
-                    <a href="#" class="btn btn-outline">সব ছবি দেখুন</a>
+                    <a href="gallery.html" class="btn btn-outline">সব ছবি দেখুন</a>
                 </div>
             </div>
         </div>
