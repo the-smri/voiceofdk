@@ -1496,3 +1496,60 @@ footer {
     color: var(--text-muted);
     font-weight: 500;
 }
+
+/* =========================================
+   22. DARK MODE & TOGGLE CSS
+   ========================================= */
+
+/* Dark Mode Footer Override */
+body.dark-mode footer {
+    background-color: #0d1117;
+    color: #e2e8f0;
+}
+body.dark-mode .footer-content h4,
+body.dark-mode .footer-social h4 {
+    color: #edf2f7;
+}
+
+/* Toggle Button */
+.theme-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-dark);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+.theme-toggle:hover {
+    color: var(--accent);
+    transform: rotate(15deg);
+    background: rgba(0,0,0,0.05);
+}
+body.dark-mode .theme-toggle:hover {
+    color: var(--accent);
+    background: rgba(255,255,255,0.1);
+}
+
+/* Nav Link Dark Mode background fix */
+body.dark-mode .nav-links {
+    background-color: var(--bg-white);
+}
+body.dark-mode .dropdown-content {
+    background-color: var(--bg-white);
+    border-color: var(--border-light);
+}
+body.dark-mode .dropdown-content li a {
+    color: var(--text-dark);
+    border-bottom: 1px solid var(--border-light);
+}
+body.dark-mode .dropdown-content li a:hover {
+    background-color: var(--bg-light);
+}
