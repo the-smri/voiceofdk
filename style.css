@@ -345,7 +345,7 @@ button {
     align-items: center;
     justify-content: center;
     position: relative;
-    background: url('./images/VoDKcover.png') center/cover no-repeat;
+    background: #006A4E; /* Bangladesh Green */
     text-align: center;
     color: white;
 }
@@ -353,7 +353,13 @@ button {
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0,106,78,0.85), rgba(0,0,0,0.6));
+    background-image: url('./images/bdmap.png');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 1;
+    z-index: 1;
+    pointer-events: none;
 }
 
 .hero-content {
@@ -395,6 +401,20 @@ button {
     display: flex;
     gap: 1rem;
     justify-content: center;
+    position: relative;
+    z-index: 2;
+}
+
+.hero .btn-primary {
+    background: #FF0000; /* Bright Red as in image */
+    background: #dc3545; /* Bootstrap-like red, or closer to BGD flag red */
+    background: #f42a41; /* Custom Red */
+    background-color: #e53935;
+    border-color: #e53935;
+}
+.hero .btn-primary:hover {
+    background-color: #c62828;
+    border-color: #c62828;
 }
 
 /* =========================================
@@ -402,7 +422,7 @@ button {
    ========================================= */
 .quote-section {
     padding: 3rem 0;
-    background: linear-gradient(135deg, var(--primary), #005a42);
+    background: linear-gradient(90deg, rgba(0, 128, 0, 0.473), red);
 }
 
 .quote-card {
@@ -487,7 +507,7 @@ button {
     gap: 2rem;
     margin-bottom: 4rem;
 }
-.media-heading{
+.media-heading , .container h1{
     color: white;
     font-size: 3rem;
     font-weight: 700;

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>বিখ্যাত ব্যক্তিত্ব · ভয়েস অফ দাউদকান্দি</title>
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+  <style>
+      .filter-btn {
+          margin: 0.5rem;
+          border-radius: 50px;
+          text-transform: capitalize;
+      }
+      .filter-btn.active {
+          background-color: var(--primary);
+          color: white;
+          border-color: var(--primary);
+      }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container nav-container">
+        <a href="index.html" class="logo">
+            <img src="./images/Logo_VoDK1.jpg" alt="Voice of Daudkandi Logo" class="logo-img">
+            <div class="logo-text">
+                <h2 class="logo-main">Voice of <span class="lg-span">Daudkandi</span></h2>
+                <span class="logo-sub">দাউদকান্দির কণ্ঠ</span>
+            </div>
+        </a>
+        
+        <div class="nav-actions">
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">হোম</a></li>
+                <li><a href="about.html">পরিচিতি</a></li>
+                <li class="dropdown">
+                    <a href="index.html#media">মিডিয়া</a>
+                    <ul class="dropdown-content">
+                        <li><a href="gallery.html">ছবি</a></li>
+                        <li><a href="index.html#videos">ভিডিও</a></li>
+                        <li><a href="index.html#writings">লেখালেখি</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#timeline">টাইমলাইন</a></li>
+                <li><a href="personalities.html">ব্যক্তিত্ব</a></li>
+                <li><a href="index.html#team">টিম</a></li>
+                <li><a href="index.html#contribute">অবদান রাখুন</a></li>
+            </ul>
+
+            <div class="controls">
+                <button id="hamburger" class="hamburger" aria-label="মেনু">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>বিখ্যাত ব্যক্তিত্ব</h1>
+            <p>দাউদকান্দির গর্ব, যারা দেশ ও জাতির সেবায় নিয়োজিত</p>
+        </div>
+    </section>
+
+    <!-- Personalities Section -->
+    <section class="section">
+        <div class="container">
+            <!-- Filter Buttons -->
+            <div class="text-center" style="margin-bottom: 3rem;">
+                <button class="btn btn-outline filter-btn active" onclick="filterPersonalities('all', this)">সব</button>
+                <button class="btn btn-outline filter-btn" onclick="filterPersonalities('politician', this)">রাজনীতিবিদ</button>
+                <button class="btn btn-outline filter-btn" onclick="filterPersonalities('social', this)">সমাজকর্মী</button>
+                <button class="btn btn-outline filter-btn" onclick="filterPersonalities('writer', this)">লেখক ও সাহিত্যিক</button>
+                <button class="btn btn-outline filter-btn" onclick="filterPersonalities('player', this)">খেলোয়াড়</button>
+            </div>
+
+            <div class="personality-grid" id="personalityGrid">
+                
+                <!-- Politicians -->
+                <div class="personality-card" data-category="politician">
+                    <div class="personality-img">
+                        <img src="./images/Kmustak.jpg" alt="খন্দকার মোশতাক আহমদ">
+                    </div>
+                    <div class="personality-info">
+                        <h3>খন্দকার মোশতাক আহমদ</h3>
+                        <p class="role">সাবেক রাষ্ট্রপতি</p>
+                        <p class="bio">বিতর্কিত রাজনৈতিক ভূমিকা থাকলেও তিনি বাংলাদেশের রাজনীতির ইতিহাসে এক গুরুত্বপূর্ণ নাম এবং দাউদকান্দির দশপাড়া গ্রামে তার জন্ম।</p>
+                        <button class="btn btn-sm view-bio-btn">জীবনী দেখুন</button>
+                    </div>
+                </div>
+
+                <div class="personality-card" data-category="politician">
+                    <div class="personality-img">
+                        <img src="./images/Rashideng.png" alt="আব্দুর রশীদ ইঞ্জিনিয়ার">
+                    </div>
+                    <div class="personality-info">
+                        <h3>আব্দুর রশীদ ইঞ্জিনিয়ার</h3>
+                        <p class="role">বরেণ্য রাজনীতিবিদ</p>
+                        <p class="bio">আব্দুর রশীদ (ইঞ্জিনিয়ার) বাংলাদেশের রাজনীতিবিদ ও প্রকৌশলী। তিনি কুমিল্লা-২ আসনের সংসদ সদস্য ছিলেন।</p>
+                        <button class="btn btn-sm view-bio-btn">জীবনী দেখুন</button>
+                    </div>
+                </div>
+
+                <div class="personality-card" data-category="politician">
+                    <div class="personality-img">
+                        <img src="./images/Kmosaraf.jpg" alt="ড. খন্দকার মোশাররফ হোসেন">
+                    </div>
+                    <div class="personality-info">
+                        <h3>ড. খন্দকার মোশাররফ হোসেন</h3>
+                        <p class="role">বরেণ্য রাজনীতিবিদ</p>
+                        <p class="bio">বরেণ্য রাজনীতিবিদ এবং আন্তর্জাতিক খ্যাতিসম্পন্ন ভূতত্ত্ববিদ। তিনি একাধিকবার গণপ্রজাতন্ত্রী বাংলাদেশ সরকারের মন্ত্রী হিসেবে দায়িত্ব পালন করেছেন।</p>
+                        <button class="btn btn-sm view-bio-btn">জীবনী দেখুন</button>
+                    </div>
+                </div>
+
+                <div class="personality-card" data-category="politician">
+                    <div class="personality-img">
+                        <img src="./images/SubidAli.jpg" alt="মেজর (অব.) মোহাম্মদ সুবিদ আলী ভূঁইয়া">
+                    </div>
+                    <div class="personality-info">
+                        <h3>মেজর (অব.) সুবিদ আলী ভূঁইয়া</h3>
+                        <p class="role">সংসদ সদস্য ও রাজনীতিবিদ</p>
+                        <p class="bio">তিনি সশস্ত্র বাহিনীর একজন বিশিষ্ট সদস্য ছিলেন এবং পরবর্তীতে রাজনীতিতে এসে সংসদ সদস্য হিসেবে দাউদকান্দির উন্নয়নে ভূমিকা রেখেছেন।</p>
+                        <button class="btn btn-sm view-bio-btn">জীবনী দেখুন</button>
+                    </div>
+                </div>
+                
+                 <div class="personality-card" data-category="politician">
+                    <div class="personality-img">
+                         <img src="./images/ikb.jpg" alt="জেনারেল (অবঃ) ইকবাল করিম ভূঁইয়া">
+                    </div>
+                    <div class="personality-info">
+                        <h3>জেনারেল (অবঃ) ইকবাল করিম ভূঁইয়া</h3>
+                        <p class="role">সাবেক সেনাপ্রধান</p>
+                        <p class="bio">ইকবাল করিম ভূঁইয়া বাংলাদেশ সেনাবাহিনীর সাবেক সেনাপ্রধান। তিনি ২৫ জুন ২০১২ থেকে ২৫ জুন ২০১৫ পর্যন্ত দায়িত্ব পালন করেছেন।</p>
+                        <button class="btn btn-sm view-bio-btn">জীবনী দেখুন</button>
+                    </div>
+                </div>
+
+                <!-- Placeholders for other categories (Since user requested these categories specifically) -->
+                
+                <!-- Social Workers -->
+                <div class="personality-card" data-category="social">
+                    <div class="personality-img">
+                         <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <div class="personality-info">
+                        <h3>বিশিষ্ট সমাজকর্মী</h3>
+                        <p class="role">সমাজসেবক</p>
+                        <p class="bio">দাউদকান্দির সমাজ উন্নয়নে অবদান রাখা বিশিষ্ট ব্যক্তিত্ব (তথ্য সংযোজন চলছে)।</p>
+                        <button class="btn btn-sm view-bio-btn" disabled>শীঘ্রই আসছে</button>
+                    </div>
+                </div>
+
+                <!-- Writers -->
+                <div class="personality-card" data-category="writer">
+                    <div class="personality-img">
+                         <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <div class="personality-info">
+                        <h3>বিশিষ্ট লেখক</h3>
+                        <p class="role">সাহিত্যিক</p>
+                        <p class="bio">দাউদকান্দির সাহিত্য অঙ্গনে অবদান রাখা বিশিষ্ট লেখক (তথ্য সংযোজন চলছে)।</p>
+                        <button class="btn btn-sm view-bio-btn" disabled>শীঘ্রই আসছে</button>
+                    </div>
+                </div>
+
+                <!-- Players -->
+                <div class="personality-card" data-category="player">
+                    <div class="personality-img">
+                         <i class="fas fa-futbol"></i>
+                    </div>
+                    <div class="personality-info">
+                        <h3>কৃতি খেলোয়াড়</h3>
+                        <p class="role">ক্রীড়াবিদ</p>
+                        <p class="bio">জাতীয় ও আন্তর্জাতিক পর্যায়ে দাউদকান্দির মুখ উজ্জ্বল করা খেলোয়াড় (তথ্য সংযোজন চলছে)।</p>
+                        <button class="btn btn-sm view-bio-btn" disabled>শীঘ্রই আসছে</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <img src="./images/Logo_VoDK1.jpg" alt="Logo" class="footer-logo">
+                <h4>দাউদকান্দির কণ্ঠ</h4>
+                <p>স্মৃতি সংগ্রহশালা - ২০২৫ সাল থেকে ঐতিহ্য সংরক্ষণ</p>
+            </div>
+            
+            <div class="footer-links">
+                <h4>দ্রুত লিংক</h4>
+                <ul>
+                    <li><a href="about.html">পরিচিতি</a></li>
+                    <li><a href="gallery.html">ছবি</a></li>
+                    <li><a href="index.html#timeline">টাইমলাইন</a></li>
+                    <li><a href="personalities.html">ব্যক্তিত্ব</a></li>
+                    <li><a href="index.html#contribute">অবদান</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-social">
+                <h4>অনুসরণ করুন</h4>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/voiceofdk/" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© ২০২৫ দাউদকান্দির কণ্ঠ – সর্বস্বত্ব সংরক্ষিত</p>
+        </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button id="backToTop" class="back-to-top" aria-label="Back to Top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+  <script>
+    // Filter Functionality
+    function filterPersonalities(category, btn) {
+        // Active Button
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // Filter Items
+        const items = document.querySelectorAll('.personality-card');
+        items.forEach(item => {
+            if (category === 'all' || item.getAttribute('data-category') === category) {
+                item.style.display = 'block';
+                // Reset animation
+                item.style.animation = 'none';
+                item.offsetHeight; /* trigger reflow */
+                item.style.animation = 'fadeIn 0.5s';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+  </script>
+</body>
+</html>
