@@ -1584,3 +1584,19 @@ body.dark-mode .dropdown-content li a:hover {
         color: #f1f5f9;
     }
 }
+
+/* =========================================
+   23. DARK MODE SECTIONS OVERRIDE
+   ========================================= */
+body.dark-mode .team-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+body.dark-mode .team-role {
+    color: var(--accent);
+    background: rgba(244, 163, 0, 0.1);
+}
+
+body.dark-mode .contribute-section {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
