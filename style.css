@@ -499,6 +499,12 @@ button {
     font-size: 1rem;
 }
 
+/* Stat Colors based on UI */
+.stat-card:nth-child(1) .stat-number { color: #FF7043; } /* Area - Orange */
+.stat-card:nth-child(2) .stat-number { color: #26C6DA; } /* Union - Teal */
+.stat-card:nth-child(3) .stat-number { color: #42A5F5; } /* Village - Blue */
+.stat-card:nth-child(4) .stat-number { color: #006a4e; } /* Population - Primary Green */
+
 /* =========================================
    9. MEDIA CATEGORIES
    ========================================= */
